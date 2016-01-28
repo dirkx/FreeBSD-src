@@ -231,7 +231,7 @@ op_tcp(struct snmp_context *ctx __unused, struct snmp_value *value,
 		break;
 
 	  case LEAF_tcpCurrEstab:
-#if __FreeBSD_version > 1002000
+#if __FreeBSD_version > 1003000
 		value->v.uint32 = tcpstat.tcps_states[TCPS_ESTABLISHED] +
 		    tcpstat.tcps_states[TCPS_CLOSE_WAIT];
 #else
